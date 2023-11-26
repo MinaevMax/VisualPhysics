@@ -9,19 +9,19 @@
 ## Требования для запуска
 
 ```yaml
-Python 3.7.X
-Шрифты (по желанию)
-  - Nunito Regular
-  - Nunito Bold
-  - Nunito Black
+Python >= 3.10.x
 ```
 
 ## Запуск
 
 ```bash
+# Инициалиировать виртуальное окружение
+$ python -m venv ./venv
+$ ./venv/Scripts/activate.bat # Для Windows
+
 # Установить все зависимости
-$ pip install PyQt5 PyQtWebEngine vpython
+$ pip install -r ./requirements.txt
 
 # Запустить VisualPhysics
-python main.py
+$ python ./main.py
 ```
