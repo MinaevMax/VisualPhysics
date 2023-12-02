@@ -1,0 +1,2 @@
+pyside6==6.6
+python-i18n==0.3.9

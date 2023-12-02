@@ -1,0 +1,122 @@
+{
+  "branches": {
+    "electromagnetism": "Electromagnetism",
+    "mechanics": "Mechanics",
+    "optics": "Optics",
+    "thermodynamics": "Thermodynamics"
+  },
+  "experiments": {
+    "circuit_overload": {
+      "name": "Circuit overload",
+      "description": ""
+    },
+    "convection": {
+      "name": "Convection",
+      "description": ""
+    },
+    "diffraction": {
+      "name": "Diffraction",
+      "description": ""
+    },
+    "elastic_collision": {
+      "name": "Elastic collision",
+      "description": ""
+    },
+    "electrical_short": {
+      "name": "Electrical short",
+      "description": ""
+    },
+    "electricity": {
+      "name": "Electricity",
+      "description": ""
+    },
+    "expansion": {
+      "name": "Expansion",
+      "description": ""
+    },
+    "gravitation": {
+      "name": "Gravitation",
+      "description": ""
+    },
+    "gyroscope": {
+      "name": "Gyroscope",
+      "description": ""
+    },
+    "heat_exchange": {
+      "name": "Heat exchange",
+      "description": ""
+    },
+    "inelastic_collision": {
+      "name": "Inelastic collision",
+      "description": ""
+    },
+    "interference": {
+      "name": "Interference",
+      "description": ""
+    },
+    "oscillation": {
+      "name": "Oscillation",
+      "description": ""
+    },
+    "point_light_source": {
+      "name": "Point light source",
+      "description": ""
+    },
+    "pull": {
+      "name": "Pull",
+      "description": ""
+    },
+    "real_light_source": {
+      "name": "Real light source",
+      "description": ""
+    },
+    "reflection": {
+      "name": "Reflection",
+      "description": ""
+    },
+    "refraction": {
+      "name": "Refraction",
+      "description": ""
+    },
+    "repulsion": {
+      "name": "Repulsion",
+      "description": ""
+    },
+    "sliding_friction": {
+      "name": "Sliding friction",
+      "description": ""
+    },
+    "static_electricity": {
+      "name": "Static electricity",
+      "description": ""
+    },
+    "thermal_conductivity": {
+      "name": "Thermal conductivity",
+      "description": ""
+    },
+    "thermal_radiation": {
+      "name": "Thermal radiation",
+      "description": ""
+    },
+    "thermal_transition": {
+      "name": "Thermal transition",
+      "description": ""
+    }
+  },
+  "settings": {},
+  "screens": {
+    "home": {
+      "heading": "Welcome to VisualPhysics",
+      "subheading": "Choose the branch you want"
+    },
+    "experiments": {
+      "heading": "Select experiment",
+      "unknownBranchSubheading": "Failed to find the `{branch}` branch"
+    },
+    "experiment": {
+      "unknownBranchHeading": "Failed to find the `{branch}` branch",
+      "unknownExperimentHeading": "Failed to find the `{experiment}` experiment in the `{branch}` branch"
+    }
+  },
+  "back": "Back"
+}

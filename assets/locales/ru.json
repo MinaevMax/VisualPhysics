@@ -1,0 +1,122 @@
+{
+  "branches": {
+    "electromagnetism": "Электромагнетизм",
+    "mechanics": "Механика",
+    "optics": "Оптика",
+    "thermodynamics": "Термодинамика"
+  },
+  "experiments": {
+    "circuit_overload": {
+      "name": "Перегрузка цепи",
+      "description": ""
+    },
+    "convection": {
+      "name": "Конвекция",
+      "description": ""
+    },
+    "diffraction": {
+      "name": "Дифракция",
+      "description": ""
+    },
+    "elastic_collision": {
+      "name": "Упругое столкновение тел",
+      "description": ""
+    },
+    "electrical_short": {
+      "name": "Короткое замыкание",
+      "description": ""
+    },
+    "electricity": {
+      "name": "Электрический ток в цепи",
+      "description": ""
+    },
+    "expansion": {
+      "name": "Объемное расширение",
+      "description": ""
+    },
+    "gravitation": {
+      "name": "Гравитация",
+      "description": ""
+    },
+    "gyroscope": {
+      "name": "Гироскоп",
+      "description": ""
+    },
+    "heat_exchange": {
+      "name": "Теплообмен",
+      "description": ""
+    },
+    "inelastic_collision": {
+      "name": "Неупругое столкновение тел",
+      "description": ""
+    },
+    "interference": {
+      "name": "Интерференция",
+      "description": ""
+    },
+    "oscillation": {
+      "name": "Колебание маятника",
+      "description": ""
+    },
+    "point_light_source": {
+      "name": "Точечный источник света",
+      "description": ""
+    },
+    "pull": {
+      "name": "Притяжение",
+      "description": ""
+    },
+    "real_light_source": {
+      "name": "Реальный источник света",
+      "description": ""
+    },
+    "reflection": {
+      "name": "Отражение",
+      "description": ""
+    },
+    "refraction": {
+      "name": "Преломление",
+      "description": ""
+    },
+    "repulsion": {
+      "name": "Отталкивание",
+      "description": ""
+    },
+    "sliding_friction": {
+      "name": "Сила трения скольжения",
+      "description": ""
+    },
+    "static_electricity": {
+      "name": "Статическое электричество",
+      "description": ""
+    },
+    "thermal_conductivity": {
+      "name": "Теплопроводность",
+      "description": ""
+    },
+    "thermal_radiation": {
+      "name": "Излучение тепла",
+      "description": ""
+    },
+    "thermal_transition": {
+      "name": "Переход работы в теплоту",
+      "description": ""
+    }
+  },
+  "settings": {},
+  "screens": {
+    "home": {
+      "heading": "Добро пожаловать в VisualPhysics",
+      "subheading": "Выберите интересующий раздел"
+    },
+    "experiments": {
+      "heading": "Выберите эксперимент",
+      "unknownBranchSubheading": "Не удалось найти раздел `{branch}`"
+    },
+    "experiment": {
+      "unknownBranchHeading": "Не удалось найти раздел `{branch}`",
+      "unknownExperimentHeading": "Не удалось найти эксперимент `{experiment}` в разделе `{branch}`"
+    }
+  },
+  "back": "Назад"
+}
