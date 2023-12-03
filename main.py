@@ -1,35 +1,84 @@
 import locale
+import os
 import sys
 
 import i18n
 from PySide6 import QtGui, QtWidgets
 
-import constant
-import screen.home
+import constants
+import screens.home
+from experiments import OscillationExperiment, GravitationExperiment, GyroscopeExperiment, PullExperiment, \
+    CircuitOverloadExperiment, ThermalRadiationExperiment, HeatExchangeExperiment, DiffractionExperiment, \
+    InterferenceExperiment, ThermalTransitionExperiment, ThermalConductivityExperiment, StaticElectricityExperiment, \
+    SlidingFrictionExperiment, RepulsionExperiment, RefractionExperiment, ConvectionExperiment, ReflectionExperiment, \
+    RealLightSourceExperiment, PointLightSourceExperiment, InelasticCollisionExperiment, ExpansionExperiment, \
+    ElectricityExperiment, ElectricalShortExperiment, ElasticCollisionExperiment
 
 branches = {
     'mechanics': {
-        'experiments': [
-            'oscillation', 'gyroscope', 'elastic_collision', 'inelastic_collision', 'sliding_friction', 'gravitation',
-        ],
+        'experiments': {
+            'oscillation': OscillationExperiment,
+            'gyroscope': GyroscopeExperiment,
+            'elastic_collision': ElasticCollisionExperiment,
+            'inelastic_collision': InelasticCollisionExperiment,
+            'sliding_friction': SlidingFrictionExperiment,
+            'gravitation': GravitationExperiment,
+        },
     },
     'optics': {
-        'experiments': [
-            'diffraction', 'interference', 'point_light_source', 'real_light_source', 'reflection', 'refraction',
-        ],
+        'experiments': {
+            'diffraction': DiffractionExperiment,
+            'interference': InterferenceExperiment,
+            'point_light_source': PointLightSourceExperiment,
+            'real_light_source': RealLightSourceExperiment,
+            'reflection': ReflectionExperiment,
+            'refraction': RefractionExperiment,
+        },
     },
     'electromagnetism': {
-        'experiments': [
-            'pull', 'repulsion', 'static_electricity', 'electricity', 'circuit_overload', 'electrical_short',
-        ],
+        'experiments': {
+            'pull': PullExperiment,
+            'repulsion': RepulsionExperiment,
+            'static_electricity': StaticElectricityExperiment,
+            'electricity': ElectricityExperiment,
+            'circuit_overload': CircuitOverloadExperiment,
+            'electrical_short': ElectricalShortExperiment,
+        },
     },
     'thermodynamics': {
-        'experiments': [
-            'convection', 'thermal_conductivity', 'expansion', 'thermal_transition', 'thermal_radiation',
-            'heat_exchange',
-        ],
+        'experiments': {
+            'convection': ConvectionExperiment,
+            'thermal_conductivity': ThermalConductivityExperiment,
+            'expansion': ExpansionExperiment,
+            'thermal_transition': ThermalTransitionExperiment,
+            'thermal_radiation': ThermalRadiationExperiment,
+            'heat_exchange': HeatExchangeExperiment,
+        },
     },
 }
+
+
+class Window(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        palette = self.palette()
+        palette.setColor(self.backgroundRole(), 0xf3f3f3)
+
+        self.resize(constants.DEFAULT_WINDOW_WIDTH, constants.DEFAULT_WINDOW_HEIGHT)
+        self.setWindowIcon(QtGui.QIcon('assets/images/phantoms.png'))
+        self.setPalette(palette)
+        self.setStyleSheet("""
+                * {
+                    font-family: 'Nunito Light', sans-serif;
+                    font-size: 14px;
+                    color: #1b1b1b;
+                }
+            """)
+
+    def closeEvent(self, event: QtGui.QCloseEvent):
+        os._exit(0)
+
 
 if __name__ == '__main__':
     match locale.getlocale()[0]:
@@ -51,22 +100,8 @@ if __name__ == '__main__':
 
     QtGui.QFontDatabase.addApplicationFont('assets/fonts/nunito.ttf')
 
-    window = QtWidgets.QMainWindow()
-    palette = window.palette()
-
-    palette.setColor(window.backgroundRole(), 0xf3f3f3)
-
-    window.resize(constant.DEFAULT_WINDOW_WIDTH, constant.DEFAULT_WINDOW_HEIGHT)
-    window.setWindowIcon(QtGui.QIcon('assets/images/phantoms.png'))
-    window.setCentralWidget(screen.HomeScreen(window))
-    window.setPalette(palette)
-    window.setStyleSheet("""
-        * {
-            font-family: 'Nunito Light', sans-serif;
-            font-size: 14px;
-            color: #1b1b1b;
-        }
-    """)
+    window = Window()
+    window.setCentralWidget(screens.HomeScreen(window))
     window.show()
 
     sys.exit(app.exec())
