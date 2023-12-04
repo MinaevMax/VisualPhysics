@@ -12,6 +12,16 @@ class ExperimentScreen(QtWidgets.QWidget):
     experiment: Experiment | None = None
 
     def __init__(self, window: QtWidgets.QMainWindow, branch: str, experiment: str):
+        """Creating the main experiment screen.
+
+            Creating the experiment screen, using the name and branch of the experiment.
+
+            :param QtWidgets.QMainWindow window: window canvas.
+            :param branch str: the branch of the experiment.
+            :param experiment str: the name of the experiment.
+            :raise KeyError if there is no branch.
+            :raise KeyError if there is no experiment.
+        """
         super().__init__(window)
 
         self.window = window
@@ -87,6 +97,12 @@ class ExperimentScreen(QtWidgets.QWidget):
         window.setFixedSize(self.size())
 
     def _init_app_bar(self, layout: QtWidgets.QHBoxLayout):
+        """Creating experiment bar.
+
+            Creating experiment bar, buttons and layout.
+
+            :layout QtWidgets.QHBoxLayout: the base layout.
+        """
         button = widgets.ButtonWidget('←')
         button.setSizePolicy(
             QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed))
@@ -100,6 +116,12 @@ class ExperimentScreen(QtWidgets.QWidget):
         layout.addWidget(heading)
 
     def _init_content(self, layout: QtWidgets.QHBoxLayout):
+        """Creating widgets.
+
+            Creating widgets for the experiment screen.
+
+            :param layout QtWidgets.QHBoxLayout: experiment screen layout.
+        """
         layout.setSpacing(16)
 
         if t(f'experiments.{self.experiment_name}.description') == '':
@@ -157,12 +179,20 @@ class ExperimentScreen(QtWidgets.QWidget):
             layout.addWidget(browser)
 
     def _open_home_screen(self):
+        """Opening the home screen.
+
+            Opening the home screen.
+        """
         if self.experiment is not None:
             self.experiment.terminate()
 
         self.window.setCentralWidget(screens.HomeScreen(self.window))
 
     def _open_experiments_screen(self):
+        """Opening the experiments screen.
+
+            Opening the experiments list screen.
+        """
         if self.experiment is not None:
             self.experiment.terminate()
 

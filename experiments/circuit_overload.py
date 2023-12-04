@@ -5,9 +5,17 @@ from vpython import *
 
 class CircuitOverloadExperiment(Experiment):
     def __init__(self):
+        """Init.
+
+            Initializing the experiment.
+        """
         super().__init__()
 
     def run(self):
+        """Run.
+
+            Running the experiment in 3D model.
+        """
         canvas(
             width=constants.DEFAULT_EXPERIMENT_CANVAS_WIDTH,
             height=constants.DEFAULT_EXPERIMENT_CANVAS_HEIGHT,

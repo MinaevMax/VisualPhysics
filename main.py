@@ -60,6 +60,11 @@ branches = {
 
 class Window(QtWidgets.QMainWindow):
     def __init__(self):
+        """Creating start window.
+
+            Creating the start window screen with default size parametrs.
+
+        """
         super().__init__()
 
         palette = self.palette()
@@ -77,6 +82,11 @@ class Window(QtWidgets.QMainWindow):
             """)
 
     def closeEvent(self, event: QtGui.QCloseEvent):
+        """Closing the application.
+
+            Closing the application.
+
+        """
         os._exit(0)
 
 

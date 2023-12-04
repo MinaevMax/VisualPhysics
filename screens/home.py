@@ -11,6 +11,12 @@ import widgets
 
 class HomeScreen(QtWidgets.QWidget):
     def __init__(self, window: QtWidgets.QMainWindow):
+        """Creating home screen.
+
+            Creating the home screen, using the name of branches.
+
+            :param QtWidgets.QMainWindow window: window canvas.
+        """
         super().__init__(window)
 
         self.window = window
@@ -58,6 +64,12 @@ class HomeScreen(QtWidgets.QWidget):
 
     @staticmethod
     def _init_headings(layout: QtWidgets.QVBoxLayout):
+        """Creating widgets.
+
+            Сreating label for home screen.
+
+            :param layout QtWidgets.QHBoxLayout: home screen layout.
+        """
         layout.setSpacing(8)
 
         heading = widgets.HeadingWidget(t('screens.home.heading'))
@@ -70,6 +82,12 @@ class HomeScreen(QtWidgets.QWidget):
         layout.addWidget(subheading)
 
     def _init_buttons(self, layout: QtWidgets.QHBoxLayout):
+        """Creating widgets.
+
+            Creating widgets for home screen.
+
+            :param layout QtWidgets.QHBoxLayout: home screen layout.
+        """
         left_container = QtWidgets.QVBoxLayout()
         right_container = QtWidgets.QVBoxLayout()
 
@@ -90,4 +108,8 @@ class HomeScreen(QtWidgets.QWidget):
         layout.addLayout(right_container)
 
     def open_experiments_screen(self, branch: str):
+        """Opening the experiments screen.
+
+            Opening the experiments list screen.
+        """
         self.window.setCentralWidget(screens.ExperimentsScreen(self.window, branch))

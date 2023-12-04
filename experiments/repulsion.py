@@ -7,9 +7,17 @@ from vpython import *
 
 class RepulsionExperiment(Experiment):
     def __init__(self):
+        """Init.
+
+            Initializing the experiment.
+        """
         super().__init__()
 
-    def on_repeat_button_press(r, self):
+    def _reset(r, self):
+        """Reset.
+
+            Reset values for restarting the experiment.
+        """
         self.alpha.pos = vector(-self.xstart, self.b, 0)
         self.target.pos = vector(0, 0, 0)
         self.alpha.p = vector(sqrt(2. * self.alpha.mass * self.ke), 0, 0)
@@ -66,7 +74,7 @@ class RepulsionExperiment(Experiment):
         ptarro = arrow(pos=self.target.pos, axis=self.target.p * pscale, color=color.magenta,
                        shaftwidth=0.5 * self.alpha.radius, fixedwidth=1, visible=parroVisible)
 
-        self.repeat_button = button(text='Повторить', bind=lambda: self.on_repeat_button_press(self))
+        self.repeat_button = button(text='Повторить', bind=lambda: self._reset(self))
 
         while True:
             rate(500)

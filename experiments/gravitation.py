@@ -7,14 +7,26 @@ from vpython import *
 
 class GravitationExperiment(Experiment):
     def __init__(self):
+        """Init.
+
+            Initializing the experiment.
+        """
         super().__init__()
 
-    def _repeat(self):
+    def _reset(self):
+        """Reset.
+
+            Reset values for restarting the experiment.
+        """
         self.ball.pos.y = 10
         self.u = 0
-        self._puk()
+        self._moving()
 
-    def _puk(self):
+    def _moving(self):
+        """Moving.
+
+            Alhoritm and parametrs of moving the ball.
+        """
         for i in range(200):
             rate(1000)
             self.invisible_box.pos.x += 0.0001
@@ -32,6 +44,10 @@ class GravitationExperiment(Experiment):
             self.invisible_box.pos.x += 0.0001
 
     def run(self):
+        """Run.
+
+            Running the experiment in 3D model.
+        """
         super()._init_i18n()
 
         canvas(
@@ -45,9 +61,9 @@ class GravitationExperiment(Experiment):
         self.u = 0
 
         box(pos=vector(0, -9.6, 0), length=10, height=1, width=10, texture=textures.metal)
-        button(text=t('repeat'), bind=self._repeat)
+        button(text=t('repeat'), bind=self._reset)
 
-        self._puk()
+        self._moving()
 
         while True:
             pass

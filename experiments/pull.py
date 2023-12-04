@@ -9,9 +9,17 @@ from vpython import *
 
 class PullExperiment(Experiment):
     def __init__(self):
+        """Init.
+
+            Initializing the experiment.
+        """
         super().__init__()
 
-    def _repeat(self):
+    def _reset(self):
+        """Reset.
+
+            Reset values for restarting the experiment.
+        """
         self.alpha.pos = vector(-self.xstart, self.b, 0)
         self.target.pos = vector(0, 0, 0)
         self.alpha.p = vector(sqrt(2. * self.alpha.mass * self.ke), 0, 0)
@@ -21,6 +29,10 @@ class PullExperiment(Experiment):
         self.target.p = vector(0, 0, 0)
 
     def run(self):
+        """Run.
+
+            Running the experiment in 3D model.
+        """
         super()._init_i18n()
 
         canvas(
@@ -61,7 +73,7 @@ class PullExperiment(Experiment):
         ptarro = arrow(pos=self.target.pos, axis=self.target.p * pscale, color=color.magenta,
                        shaftwidth=0.5 * self.alpha.radius, fixedwidth=1, visible=parro_visible)
 
-        button(text=t('repeat'), bind=self._repeat)
+        button(text=t('repeat'), bind=self._reset)
 
         while True:
             rate(500)

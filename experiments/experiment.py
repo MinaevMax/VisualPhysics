@@ -4,9 +4,17 @@ import i18n
 
 class Experiment(Process):
     def __init__(self):
+        """Init.
+
+            Initializing the base.
+        """
         super().__init__()
 
     def _init_i18n(self):
+        """i18n
+
+            Initializing the localized text.
+        """
         import locale
 
         match locale.getlocale()[0]:

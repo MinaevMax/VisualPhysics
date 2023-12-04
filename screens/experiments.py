@@ -11,6 +11,12 @@ import widgets
 
 class ExperimentsScreen(QtWidgets.QWidget):
     def __init__(self, window: QtWidgets.QMainWindow, branch: str):
+        """Creating the experiments list screen.
+
+            Creating the experiments list screen, making the 6 buttons layout(2 containers).
+
+            :param QtWidgets.QMainWindow window: window canvas.
+        """
         super().__init__(window)
 
         self.window = window
@@ -51,6 +57,13 @@ class ExperimentsScreen(QtWidgets.QWidget):
         window.setFixedSize(self.size())
 
     def _init_headings(self, layout: QtWidgets.QVBoxLayout):
+        """Creating widgets.
+
+            Сreating label for the experiments screen.
+
+            :param layout QtWidgets.QHBoxLayout: experiments screen layout.
+            :raise KeyError if there is no experiment branch in list.
+        """
         try:
             _ = main.branches[self.branch]
 
@@ -63,6 +76,13 @@ class ExperimentsScreen(QtWidgets.QWidget):
             layout.addWidget(heading)
 
     def _init_buttons(self, layout: QtWidgets.QVBoxLayout):
+        """Creating widgets.
+
+            Creating widgets for the experiments screen.
+
+            :param layout QtWidgets.QHBoxLayout: experiments list screen layout.
+            :raise KeyError if there is no experiment in list.
+        """
         branches_buttons = QtWidgets.QHBoxLayout()
         left_container = QtWidgets.QVBoxLayout()
         right_container = QtWidgets.QVBoxLayout()
@@ -93,7 +113,15 @@ class ExperimentsScreen(QtWidgets.QWidget):
         layout.addWidget(back_button)
 
     def _open_home_screen(self):
+        """Opening the home screen.
+
+            Opening the home screen.
+        """
         self.window.setCentralWidget(screens.HomeScreen(self.window))
 
     def _open_experiment_screen(self, experiment: str):
+        """Opening the experiment screen.
+
+            Opening the experiment screen.
+        """
         self.window.setCentralWidget(screens.ExperimentScreen(self.window, self.branch, experiment))
