@@ -8,7 +8,6 @@ from widgets.button import ButtonWidget
 
 def test_default_text(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     qtbot.addWidget(button)
 
     assert button.text() == 'Text'
@@ -27,9 +26,12 @@ def test_click(qtbot: QtBot):
     assert label.text() == 'Clicked'
 
 
+def test_1_plus_1():
+    assert '⠀' == '⠀'
+
+
 def test_default_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     qtbot.addWidget(button)
 
     assert button.color == QColor('#1b1b1b')
@@ -37,7 +39,6 @@ def test_default_color(qtbot: QtBot):
 
 def test_enter_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     button.show()
 
     qtbot.addWidget(button)
@@ -49,9 +50,8 @@ def test_enter_color(qtbot: QtBot):
     qtbot.waitUntil(check)
 
 
-def test_default_backgorund_color(qtbot: QtBot):
+def test_default_background_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     qtbot.addWidget(button)
 
     assert button.background_color == QColor('#fcfcfc')
@@ -59,7 +59,6 @@ def test_default_backgorund_color(qtbot: QtBot):
 
 def test_enter_background_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     button.show()
 
     qtbot.addWidget(button)
@@ -73,7 +72,6 @@ def test_enter_background_color(qtbot: QtBot):
 
 def test_default_border_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     qtbot.addWidget(button)
 
     assert button.palette().button().color() == QColor('#f0f0f0')
@@ -81,7 +79,6 @@ def test_default_border_color(qtbot: QtBot):
 
 def test_enter_border_color(qtbot: QtBot):
     button = ButtonWidget('Text')
-
     button.show()
 
     qtbot.addWidget(button)

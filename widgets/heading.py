@@ -25,6 +25,7 @@ class HeadingWidget(QtWidgets.QLabel):
         Creates the heading(Label). The size if chosen by the level of the heading.
 
     """
+
     def __init__(self, text: str, level: HeadingLevel = HeadingLevel.ONE):
         super().__init__(text)
 

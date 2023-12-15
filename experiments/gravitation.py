@@ -67,7 +67,3 @@ class GravitationExperiment(Experiment):
 
         while True:
             pass
-
-
-
-
