@@ -2,3 +2,4 @@ pyside6==6.6
 python-i18n==0.3.9
 pytest-qt==4.2.0
 vpython==7.6.4
+pdoc==14.2.0
